@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => '__root__',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '3eae2737d6ca1637e805361288d261328e65554c',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '3eae2737d6ca1637e805361288d261328e65554c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'htmlburger/carbon-field-icon' => array(
+            'pretty_version' => 'v3.1.0',
+            'version' => '3.1.0.0',
+            'reference' => 'fe0341462e8c8681bb7ff20380974022578e15b0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../htmlburger/carbon-field-icon',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'htmlburger/carbon-fields' => array(
+            'pretty_version' => 'v3.3.4',
+            'version' => '3.3.4.0',
+            'reference' => '2ae6773c004b873a1b0456613b14852c1a436a96',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../htmlburger/carbon-fields',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
