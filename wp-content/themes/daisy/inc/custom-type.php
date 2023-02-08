@@ -1,7 +1,7 @@
 <?php
 add_action( 'init', 'register_post_types' );
 function register_post_types(){
-	register_post_type( 'user_post', [
+	register_post_type( 'blocks', [
 		'label'  => null,
 		'labels' => [
 			'name'               => 'Блоки', // основное название для типа записи

@@ -10,12 +10,14 @@
     //    print_r($association);
        foreach ( $association as $item ) {
         print_r($item);
-        if ( $item['type'] == 'user_post' ) {
+        if ( $item['type'] == 'blocks' ) {
             // получаем данные поста по его ID
             $post = get_post( $item['id'] );
             print_r($post);
         }  
     }
+  //  $g = get_post_meta('12');
+  //  print_r($g);
        ?>
          </main>
 <?php
