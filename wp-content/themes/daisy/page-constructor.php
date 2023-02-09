@@ -6,15 +6,28 @@
          ?>
          <main class="main">
        <?  
-       $association = carbon_get_the_post_meta( 'crb_association');
+       $association = carbon_get_the_post_meta( 'ass');
     //    print_r($association);
        foreach ( $association as $item ) {
-        print_r($item);
-        if ( $item['type'] == 'blocks' ) {
-            // получаем данные поста по его ID
-            $post = get_post( $item['id'] );
-            print_r($post);
-        }  
+        $post = get_post( $item['id'] );
+        // echo the_title();
+        print_r($post); 
+        $m = get_post_meta($item['id'], '_wp_page_template');?>
+        <br>
+      <?  print_r($m[0]);
+        ?>
+        <br>
+        <br>
+
+        <?      
+          if($m[0] == 'adv.php'){
+            get_template_part('adv');
+          }
+          if($m[0] == 'slider.php'){
+            get_template_part('slider');
+          }
+        // get_template_part('slider');
+        // echo carbon_get_the_post_meta('art_short_descr');
     }
   //  $g = get_post_meta('12');
   //  print_r($g);

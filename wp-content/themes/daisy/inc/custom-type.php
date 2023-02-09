@@ -33,10 +33,17 @@ function register_post_types(){
 		//'capabilities'      => 'post', // массив дополнительных прав для этого типа записи
 		//'map_meta_cap'      => null, // Ставим true чтобы включить дефолтный обработчик специальных прав
 		'hierarchical'        => false,
-		'supports'            => [ 'title', 'editor', 'custom-fields', 'author', 'comments' ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+		'supports'            => [ 'title', 'editor', 'custom-fields', 'author', 'comments', 'page-attributes', 'post-formats' ], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
 		'taxonomies'          => [],
 		'has_archive'         => false,
 		'rewrite'             => true,
 		'query_var'           => true,
 	] );
 }
+// function myplugin_register_template() {
+//     $post_type_object = get_post_type_object( 'blocks' );
+//     $post_type_object->template = array(
+//         array( 'core/image' ),
+//     );
+// }
+// add_action( 'init', 'myplugin_register_template' );

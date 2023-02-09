@@ -4,15 +4,19 @@ use Carbon_Fields\Field;
 
 add_action( 'carbon_fields_register_fields', 'crb_blocks' );
 function crb_blocks() {
-    Container::make('post_meta', 'Настройки блока')
-    ->show_on_post_type('blocks')
-    ->add_tab('Конструктор блока', array(
-        Field::make('select', 'block_type', 'Тип блока')
-            ->add_options( array (
-                'adv' => 'Преимущества',
-                'about' => 'О нас',
-            )),
-        Field::make('text', 'block_main_title', 'Главный заголовок блока')->set_width(50),
-        Field::make('text', 'block_id', 'id блока')->set_width(50)->help_text('Для навигации по якорным ссылкам'),
-    ));
+
+    Container::make('post_meta', 'Настройки категории')
+    ->show_on_post_type('page')
+    ->add_tab('Блоки на странице', array(
+        Field::make('association', 'ass')
+        ->set_types(array(
+          array(
+            'type' => 'post',
+            'post_type' => 'blocks',
+          ),
+        ))
+));
 }
+
+require_once get_template_directory() . '/inc/custom-fields/blocks/adv.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/slider.php';

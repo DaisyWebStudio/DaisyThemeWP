@@ -77,6 +77,7 @@ require_once get_template_directory() . '/inc/custom-type.php';
 require_once get_template_directory() . '/inc/carbon-fields/index.php';
 require_once get_template_directory() . '/inc/custom-fields/main-style.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks.php';
+// require_once get_template_directory() . '/inc/custom-fields/pm.php';
 // require_once get_template_directory() . '/inc/custom-fields/page-fields.php';
 
 
