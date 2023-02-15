@@ -12,7 +12,6 @@ try {
 
 }
 // swiperSlider end
-
 const advantagesSwiper = new Swiper('.advantages-swiper', {
 
   slidesPerView: 1,
@@ -46,7 +45,7 @@ const advantagesSwiper = new Swiper('.advantages-swiper', {
     },
     // when window width is >= 640px
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 30
     }
   }

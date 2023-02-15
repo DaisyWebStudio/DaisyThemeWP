@@ -6,7 +6,50 @@ add_action( 'carbon_fields_register_fields', 'crb_adv' );
 function crb_adv() {
     Container::make('post_meta', 'Настройки этого блока')
     ->show_on_template('adv.php')
-    ->add_tab('Преемущества', array(
-        Field::make('text', 'adv_test', 'Преемущества'),
+    ->add_tab('Настройки отображения', array(
+        Field::make( "radio", "adv_side_image", "Расположение картинки" )
+				  ->add_options( array(
+                      'none' => 'Без картинки',
+                      'bg'     => 'Фоновая картинка',
+					  'top'     => 'Сверху',
+					  'left' => 'Слева',
+					  'right'  => 'Справа',
+				  ) )->set_width(50),
+				  Field::make( "radio", "adv_side_count", "Кол-во слайдев" )
+				  ->add_options( array(
+                      '4' => '4',
+                      '3'     => '3',
+					  '2'     => '2',
+					  '1' => '1',
+				  ) )->set_width(50),
+				 ))
+				 
+		// ->add_tab('Настройки вкладок', array(
+		// 			Field::make('association', 'card_tab_ass')
+		// 			->set_types(array(
+		// 			  array(
+		// 				'type' => 'term',
+		// 				'post_type' => 'cards_tax',
+		// 			  ),
+		// 			))
+		// 		))		 
+	->add_tab('Настройки контента', array(
+		Field::make( 'complex', 'tabs', 'Вкладки' )
+		->add_fields( array(
+		Field::make('text', 'tab_title', 'Заголовок вкладки')->set_width(40),
+		Field::make('icon', 'tab_icon', 'Иконка')->set_width(60),
+		Field::make('association', 'card_ass')
+        ->set_types(array(
+          array(
+            'type' => 'term',
+			'post_type' => 'cards_tax',
+          ),
+        ))
+		))
     ));
+	Container::make('post_meta', 'Настройки карточки')
+    ->show_on_post_type('cards')
+    ->add_tab('Настройки контента', array(
+        Field::make( "textarea", "card_descr", "Описание" ),
+	));
 }

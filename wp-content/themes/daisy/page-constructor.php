@@ -11,13 +11,9 @@
        foreach ( $association as $item ) {
         $post = get_post( $item['id'] );
         // echo the_title();
-        print_r($post); 
+       
         $m = get_post_meta($item['id'], '_wp_page_template');?>
-        <br>
-      <?  print_r($m[0]);
-        ?>
-        <br>
-        <br>
+      
 
         <?      
           if($m[0] == 'adv.php'){

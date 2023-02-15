@@ -8,5 +8,18 @@ function crb_slider() {
     ->show_on_template('slider.php')
     ->add_tab('Слайдер', array(
         Field::make('text', 'slider_test', 'Слайдер'),
+    ))->add_tab('Настройки контента', array(
+		Field::make( 'complex', 'tabs', 'Вкладки' )
+		->add_fields( array(
+		Field::make('text', 'tab_title', 'Заголовок вкладки')->set_width(40),
+		Field::make('icon', 'tab_icon', 'Иконка')->set_width(60),
+		Field::make('association', 'card_ass')
+        ->set_types(array(
+          array(
+            'type' => 'term',
+			'post_type' => 'cards_tax',
+          ),
+        ))
+		))
     ));
 }
