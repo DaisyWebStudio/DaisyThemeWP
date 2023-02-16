@@ -8,20 +8,18 @@ function crb_blocks() {
   ->show_on_post_type('blocks')
   ->add_tab('Заголовок', array(
     Field::make( "text", "block_title", "Заголовок блока" ),
-    Field::make("html", "block_btn", 'Кнопка подробнее')
-		 ->set_html('<h1>Кнопка подробнее</h1>'),
+  ))
+  ->add_tab('Кнопка подробнее', array(
     Field::make( "text", "block_btn_label", "Надпись на ссылке" )->set_width(40),
     Field::make( "text", "block_btn_link", "Ссылка" )->set_width(60),
     Field::make( "icon", "block_btn_icon", "Иконка" ),
   ))
     ->add_tab('Вкладки', array(
-      Field::make("html", "block_tabs", 'Кнопка подробнее')
-      ->set_html('<h1>Вкладки</h1>'),
-      Field::make( "radio", "block_tabs_on", "Расположение картинки" )
-      ->add_options( array(
-         'no' => 'Выключить вкладки',
-         'yes'  => 'Включить вкладки',
-      ) ),
+      Field::make( 'complex', 'tabs', 'Вкладки' )
+		->add_fields( array(
+		Field::make('text', 'tab_title', 'Заголовок вкладки')->set_width(40),
+		Field::make('icon', 'tab_icon', 'Иконка')->set_width(60),
+		))
       ));
     Container::make('post_meta', 'Настройки категории')
     ->show_on_post_type('page')
@@ -38,3 +36,4 @@ function crb_blocks() {
 
 require_once get_template_directory() . '/inc/custom-fields/blocks/adv.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/slider.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/counter.php';

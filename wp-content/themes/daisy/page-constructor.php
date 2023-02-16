@@ -16,11 +16,14 @@
       
 
         <?      
-          if($m[0] == 'adv.php'){
-            get_template_part('adv');
+          if($m[0] == 'blocks/adv.php'){
+            get_template_part('blocks/adv');
           }
-          if($m[0] == 'slider.php'){
-            get_template_part('slider');
+          if($m[0] == 'blocks/slider.php'){
+            get_template_part('blocks/slider');
+          }
+          if($m[0] == 'blocks/counter.php'){
+            get_template_part('blocks/counter');
           }
         // get_template_part('slider');
         // echo carbon_get_the_post_meta('art_short_descr');

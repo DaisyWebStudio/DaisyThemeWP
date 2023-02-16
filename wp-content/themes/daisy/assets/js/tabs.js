@@ -1,3 +1,4 @@
+try{
 const tabsBtn = document.querySelectorAll('.tabs__btn');
 const tabsMenuBtn = document.querySelectorAll('.tabs-menu__btn');
 const tabsPanel = document.querySelectorAll('.tabs__panel');
@@ -104,3 +105,4 @@ formTabsBtn.forEach(tab => {
     document.querySelector(`[data-blockpopup="${path}"]`).classList.add('popup-form__tab-block--active')
   })
 })
+} catch {}

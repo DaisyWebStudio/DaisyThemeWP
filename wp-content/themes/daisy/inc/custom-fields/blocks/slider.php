@@ -5,7 +5,7 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_slider' );
 function crb_slider() {
     Container::make('post_meta', 'Настройки этого блока')
-    ->show_on_template('slider.php')
+    ->show_on_template('blocks/slider.php')
     ->add_tab('Слайдер', array(
         Field::make('text', 'slider_test', 'Слайдер'),
     ))->add_tab('Настройки контента', array(

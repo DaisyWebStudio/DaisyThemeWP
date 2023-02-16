@@ -37,6 +37,9 @@ $count = carbon_get_the_post_meta( 'adv_side_count');
       }
   </style>
 <section class="advantages <? 
+if($img_order == 'none'){ 
+  echo 'advantages-img-none';
+  }
 if($img_order == 'bg'){ 
   echo 'advantages-img-bg';
   }
@@ -62,7 +65,8 @@ if($img_order == 'left' || $img_order == 'right'){
           <!-- body-block -- start-->
           <div class="advantages__body">
             <!-- tab-item-->
-            <? $data =  carbon_get_the_post_meta( 'tabs'); ?>
+            <? $data =  carbon_get_the_post_meta( 'adv_tabs'); 
+            ?>
            <? 
           //  print_r($data); 
            ?>
@@ -86,7 +90,7 @@ if($img_order == 'left' || $img_order == 'right'){
                   ),
                 ) );
                 ?>
-           <div data-show="<? echo $count; ?>" class="swiper advantages-swiper tabs__panel">
+           <div id="sl<? the_id(); ?>" data-show="<? echo $count; ?>" class="swiper advantages-swiper tabs__panel">
               <div class="swiper-wrapper advantages__swiper">
             <?  if ( $_posts->have_posts() ) :
             while ( $_posts->have_posts() ) :

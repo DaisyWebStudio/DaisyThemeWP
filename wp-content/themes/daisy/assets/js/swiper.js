@@ -12,8 +12,16 @@ try {
 
 }
 // swiperSlider end
-const advantagesSwiper = new Swiper('.advantages-swiper', {
+// document.querySelectorAll('.advantages-swiper').forEach((i) => {
+  
+// })
 
+
+// Function that actually builds the swiper 
+const buildSwiperSlider = sliderElm => {
+    const sliderIdentifier = sliderElm.dataset.show;
+    return new Swiper(`#${sliderElm.id}`, {
+     
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
@@ -45,12 +53,57 @@ const advantagesSwiper = new Swiper('.advantages-swiper', {
     },
     // when window width is >= 640px
     1024: {
-      slidesPerView: 2,
+      slidesPerView: sliderIdentifier,
       spaceBetween: 30
     }
   }
+    });
+}
 
-});
+const allSliders = document.querySelectorAll('.advantages-swiper');
+
+allSliders.forEach(slider => buildSwiperSlider(slider));
+
+
+// const advantagesSwiper = new Swiper('.advantages-swiper', {
+
+//   slidesPerView: 1,
+//   spaceBetween: 30,
+//   loop: true,
+
+//   pagination: {
+//     el: '.advantages-pagination',
+//     clickable: true,
+//   },
+
+//   navigation: {
+//     nextEl: '.advantages-navigation-next',
+//     prevEl: '.advantages-navigation-prev',
+//   },
+
+//   breakpoints: {
+//     // when window width is >= 320px
+//     564: {
+//       slidesPerView: 1,
+//       spaceBetween: 20
+//     },
+//     762: {
+//       slidesPerView: 2,
+//       spaceBetween: 20
+//     },
+//     // when window width is >= 480px
+//     992: {
+//       slidesPerView: 2,
+//       spaceBetween: 30
+//     },
+//     // when window width is >= 640px
+//     1024: {
+//       slidesPerView: 2,
+//       spaceBetween: 30
+//     }
+//   }
+
+// });
 
 
 

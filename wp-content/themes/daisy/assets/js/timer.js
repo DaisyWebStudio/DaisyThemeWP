@@ -1,3 +1,4 @@
+try {
 let date = new Date('Jan 29 2023 19:00:00')
 
 function counts() {
@@ -23,8 +24,8 @@ counts()
 
 setInterval(counts, 1000)
 
-
-
+} catch {}
+try {
 let dateCount1 = new Date('Jan 27 2023 14:00:00')
 
 function countsBlock1() {
@@ -50,10 +51,16 @@ function countsBlock1() {
 countsBlock1()
 
 setInterval(countsBlock1, 1000)
+} catch {}
 
-
-
-let dateCount2 = new Date('Jan 24 2023 14:00:00')
+try {
+const timer = document.querySelectorAll('.counter__card');
+timer.forEach((i) => {
+  let taimerWrap = i.querySelector('.timer-count-2');
+  let date = taimerWrap.dataset.date;
+  console.log(date);
+  console.log(taimerWrap);
+  let dateCount2 = new Date(date);
 
 function countsBlock2() {
   let nowDate = new Date()
@@ -65,16 +72,43 @@ function countsBlock2() {
   let second = Math.floor(gap / 1000) % 60
 
   if (gap < 0) {
-    document.querySelector('.timer-count-2').innerText = ''
+    taimerWrap.innerText = ''
   } else {
-    document.querySelector('#count-days-2').innerText = days
-    document.querySelector('#count-hours-2').innerText = hours
-    document.querySelector('#count-minutes-2').innerText = minutes
-    document.querySelector('#count-second-2').innerText = second
+    taimerWrap.querySelector('#count-days-2').innerText = days
+    taimerWrap.querySelector('#count-hours-2').innerText = hours
+    taimerWrap.querySelector('#count-minutes-2').innerText = minutes
+    taimerWrap.querySelector('#count-second-2').innerText = second
   }
 
 }
 
-countsBlock2()
+countsBlock2();
 
 setInterval(countsBlock2, 1000)
+})
+// let dateCount2 = new Date('Jan 24 2024 14:00:00')
+
+// function countsBlock2() {
+//   let nowDate = new Date()
+//   let gap = dateCount2 - nowDate
+
+//   let days = Math.floor(gap / 1000 / 60 / 60 / 24)
+//   let hours = Math.floor(gap / 1000 / 60 / 60) % 24
+//   let minutes = Math.floor(gap / 1000 / 60) % 60
+//   let second = Math.floor(gap / 1000) % 60
+
+//   if (gap < 0) {
+//     document.querySelector('.timer-count-2').innerText = ''
+//   } else {
+//     document.querySelector('#count-days-2').innerText = days
+//     document.querySelector('#count-hours-2').innerText = hours
+//     document.querySelector('#count-minutes-2').innerText = minutes
+//     document.querySelector('#count-second-2').innerText = second
+//   }
+
+// }
+
+// countsBlock2();
+
+// setInterval(countsBlock2, 1000)
+} catch {}

@@ -5,7 +5,7 @@ use Carbon_Fields\Field;
 add_action( 'carbon_fields_register_fields', 'crb_adv' );
 function crb_adv() {
     Container::make('post_meta', 'Настройки этого блока')
-    ->show_on_template('adv.php')
+    ->show_on_template('blocks/adv.php')
     ->add_tab('Настройки отображения', array(
         Field::make( "radio", "adv_side_image", "Расположение картинки" )
 				  ->add_options( array(
@@ -34,10 +34,8 @@ function crb_adv() {
 		// 			))
 		// 		))		 
 	->add_tab('Настройки контента', array(
-		Field::make( 'complex', 'tabs', 'Вкладки' )
+		Field::make( 'complex', 'adv_tabs', 'Вкладки' )
 		->add_fields( array(
-		Field::make('text', 'tab_title', 'Заголовок вкладки')->set_width(40),
-		Field::make('icon', 'tab_icon', 'Иконка')->set_width(60),
 		Field::make('association', 'card_ass')
         ->set_types(array(
           array(
@@ -46,7 +44,8 @@ function crb_adv() {
           ),
         ))
 		))
-    ));
+    ))
+	;
 	Container::make('post_meta', 'Настройки карточки')
     ->show_on_post_type('cards')
     ->add_tab('Настройки контента', array(
