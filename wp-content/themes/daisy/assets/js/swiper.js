@@ -15,9 +15,77 @@ try {
 // document.querySelectorAll('.advantages-swiper').forEach((i) => {
   
 // })
+try {
+  const aboutUsSwiper = new Swiper(".about-us-Swiper", {
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.about-us-navigation-next',
+      prevEl: '.about-us-navigation-prev',
+    },
+    // autoplay: true,
+    // loop: true,
+  });
 
+  const aboutUsOtherSwiper = new Swiper(".about-us-other-Swiper", {
+    direction: "horizontal",
+    mousewheel: true,
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      577: {
+        direction: "vertical",
+        // mousewheel: true,
+        spaceBetween: 10,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        // autoplay: true,
+        // loop: true,
+        // nested: true,
+        // observer: true,
+        // observeParents: true,
+        // observeSlideChildren: true,
+      },
+    },
+  });
+
+  const aboutUsOtherSwiper2 = new Swiper(".about-us-other-Swiper2", {
+    direction: "horizontal",
+    mousewheel: true,
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+
+    // autoplay: true,
+    // loop: true,
+    // nested: true,
+    // observer: true,
+    // observeParents: true,
+    // observeSlideChildren: true,
+    // slidesPerView: "auto",
+    breakpoints: {
+      577: {
+        direction: "vertical",
+        spaceBetween: 10,
+        // mousewheel: true,
+      },
+
+    },
+  });
+} catch { }
 
 // Function that actually builds the swiper 
+try{
 const buildSwiperSlider = sliderElm => {
     const sliderIdentifier = sliderElm.dataset.show;
     return new Swiper(`#${sliderElm.id}`, {
@@ -63,7 +131,7 @@ const buildSwiperSlider = sliderElm => {
 const allSliders = document.querySelectorAll('.advantages-swiper');
 
 allSliders.forEach(slider => buildSwiperSlider(slider));
-
+} catch {}
 
 // const advantagesSwiper = new Swiper('.advantages-swiper', {
 

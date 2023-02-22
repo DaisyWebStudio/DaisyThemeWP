@@ -1,16 +1,17 @@
 try{
-const tabsBtn = document.querySelectorAll('.tabs__btn');
-const tabsMenuBtn = document.querySelectorAll('.tabs-menu__btn');
-const tabsPanel = document.querySelectorAll('.tabs__panel');
-const tabsList = document.querySelectorAll('.tabs__list');
+const section = document.querySelectorAll('section');
+section.forEach((i) => {
+  const tabsBtn = i.querySelectorAll('.tabs__btn');
+const tabsMenuBtn = i.querySelectorAll('.tabs-menu__btn');
+const tabsPanel = i.querySelectorAll('.tabs__panel');
+const tabsList = i.querySelectorAll('.tabs__list');
 
 tabsList.forEach(el => {
   let children = el.children
   children[0].classList.add('tabs__btn--active')
 })
-document.querySelectorAll('section').forEach((i) => {
   i.querySelector('.tabs__panel').classList.add('tabs__panel--active');
-})
+
 
 for (let i = 0; i < tabsBtn.length; i++) {
 
@@ -35,6 +36,8 @@ for (let i = 0; i < tabsBtn.length; i++) {
   })
 
 }
+})
+
 
 
 

@@ -18,21 +18,11 @@ function crb_adv() {
 				  Field::make( "radio", "adv_side_count", "Кол-во слайдев" )
 				  ->add_options( array(
                       '4' => '4',
-                      '3'     => '3',
-					  '2'     => '2',
+                      '3' => '3',
+					  '2' => '2',
 					  '1' => '1',
 				  ) )->set_width(50),
-				 ))
-				 
-		// ->add_tab('Настройки вкладок', array(
-		// 			Field::make('association', 'card_tab_ass')
-		// 			->set_types(array(
-		// 			  array(
-		// 				'type' => 'term',
-		// 				'post_type' => 'cards_tax',
-		// 			  ),
-		// 			))
-		// 		))		 
+				 )) 
 	->add_tab('Настройки контента', array(
 		Field::make( 'complex', 'adv_tabs', 'Вкладки' )
 		->add_fields( array(
@@ -45,10 +35,26 @@ function crb_adv() {
         ))
 		))
     ))
+	->add_tab('Настройки кнопки', array(
+		Field::make( "separator", "card_btn", "Настройки кнопки" ),
+		Field::make( "text", "card_btn_label", "Надпиь на кнопке" )->set_width(40),
+		Field::make( "icon", "card_btn_icon", "Иконка" )->set_width(60),
+		// Field::make( "checkbox", "card_btn_permalink", "Permalink" )->set_width(20),
+		Field::make( "separator", "card_btn_permalink", "По умолчанию ссылка на страницу записи" ),
+		Field::make( "text", "card_btn_link", "Ссылка" )->set_width(50),
+		Field::make( "text", "card_btn_modal", "Popup" )->set_width(50),
+    ))
+	->add_tab('Включить дату', array(
+		Field::make( "checkbox", "card_date", "Включить дату" ),
+    ))
 	;
 	Container::make('post_meta', 'Настройки карточки')
     ->show_on_post_type('cards')
     ->add_tab('Настройки контента', array(
-        Field::make( "textarea", "card_descr", "Описание" ),
+        Field::make( "rich_text", "card_descr", "Описание" ),
+		Field::make( "separator", "card_icon_seting", "Настройки иконки" ),
+		Field::make( "text", "card_icon_text", "Цифра/текст" )->set_width(20),
+		Field::make( "image", "card_icon_image", "Иконка" )->set_width(20),
+		Field::make( "icon", "card_icon_icon", "Иконка" )->set_width(60),
 	));
 }

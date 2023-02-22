@@ -1,0 +1,32 @@
+button a{
+    color: #fff;
+  }
+  .about_content_slide_image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+.about-us__block {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: calc(50% - 15px) auto;
+    grid-template-columns: calc(50% - 15px) auto;
+    gap: 30px;
+    height: 100%;
+  }
+  .about-us__block_full{
+    -ms-grid-columns: 100% auto;
+    grid-template-columns: 100% auto;
+  }
+.about-us__block_70{
+  -ms-grid-columns: calc(70% - 15px) auto;
+  grid-template-columns: calc(70% - 15px) auto;
+}
+.about-us__block_50{
+  -ms-grid-columns: calc(50% - 15px) auto;
+  grid-template-columns: calc(50% - 15px) auto;
+}
+.about-us__block_30{
+  -ms-grid-columns: calc(30% - 15px) auto;
+  grid-template-columns: calc(30% - 15px) auto;
+}

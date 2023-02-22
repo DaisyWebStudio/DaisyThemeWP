@@ -1,3 +1,4 @@
+try{
 const booking = document.querySelector('.top-nav__booking')
 const body = document.querySelector('body')
 const popup = document.querySelector('.popup')
@@ -31,3 +32,4 @@ function enableScroll () {
   body.classList.remove('disable-scroll')
   document.body.style.paddingRight = 0
 }
+} catch {}

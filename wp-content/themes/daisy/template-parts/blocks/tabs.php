@@ -1,5 +1,5 @@
-<? $data =  carbon_get_the_post_meta( 'tabs'); ?>
-              <? if ( ! empty( $data ) && count($data) > 1): ?>
+<? $data_tab =  carbon_get_the_post_meta( 'tabs'); ?>
+<? if ( ! empty( $data_tab ) && count($data_tab) > 1): ?>
 <div class="tabs">
             <div class="tabs__wrapper">
               <div class="tabs__header" aria-expanded="false"> 
@@ -10,7 +10,7 @@
               </div>
              
               <div class="tabs__list" aria-hidden="true">
-              <?php foreach ( $data as $item ): ?>
+              <?php foreach ( $data_tab as $item ): ?>
                 <button class="tabs__btn tabs__item" data-tabs-path="more">
                   <div class="icon-wrapper-14"><i class="fa-solid <? 
                   if($item['tab_icon']){
@@ -24,4 +24,8 @@
               </div>
             </div>
           </div>
-<?php endif; ?>
+
+          
+                <?php 
+              endif; 
+              ?>

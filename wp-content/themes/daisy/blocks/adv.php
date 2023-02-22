@@ -76,7 +76,6 @@ if($img_order == 'left' || $img_order == 'right'){
                 $dd = $item['card_ass'];
                 $term_id = array();
                 foreach ( $dd as $d ){
-                  print_r($d);
                   array_push($term_id, $d['id']);
                 }
                 $_posts    = new WP_Query( array(
@@ -92,6 +91,15 @@ if($img_order == 'left' || $img_order == 'right'){
                 ?>
            <div id="sl<? the_id(); ?>" data-show="<? echo $count; ?>" class="swiper advantages-swiper tabs__panel">
               <div class="swiper-wrapper advantages__swiper">
+             <? 
+            //  $btn = false;
+             $btn = carbon_get_the_post_meta( 'card_btn_label');
+            $btn_icon = carbon_get_the_post_meta( 'card_btn_icon');
+            $dateon = carbon_get_the_post_meta( 'card_date');
+                // if($btn_label){
+                //   $btn = true;
+                // }
+                         ?>
             <?  if ( $_posts->have_posts() ) :
             while ( $_posts->have_posts() ) :
               $_posts->the_post() ?>
@@ -113,20 +121,38 @@ if($img_order == 'left' || $img_order == 'right'){
                           <div class="advantages__title"> 
                             <h3 class="item-title"><? the_title(); ?></h3>
                           </div>
-                          <div class="advantages__rating"><span class="item-title">5</span>
-                            <div class="icon-wrapper-24"><i class="fa-solid fa-star"> </i></div>
+                             <div class="advantages__rating"><span class="item-title"><? echo carbon_get_the_post_meta( 'card_icon_text'); ?></span>
+                          <? if(carbon_get_the_post_meta( 'card_icon_image')){
+                            $image = carbon_get_the_post_meta( 'card_icon_image');
+                            $image_url = wp_get_attachment_image_url( $image, 'full' ); ?>
+                            <img src="<? echo $image_url; ?>" alt="">
+                         <? } ?>
+                         <? if(carbon_get_the_post_meta( 'card_icon_icon')){ ?>
+                            <div class="icon-wrapper-24"><i class="fa-solid <? echo carbon_get_the_post_meta( 'card_icon_icon')['class'] ?>"> </i> </div>
+                          <? } ?>
                           </div>
                         </div>
                         <div class="advantages__description"><? echo carbon_get_the_post_meta( 'card_descr'); ?></div>
                       </div>
+                      <? if($btn || $dateon){ ?> 
                       <div class="advantages__footer">
-                        <a href="<? the_permalink(); ?>" class="advantages__btn"> 
-                          <div class="icon-wrapper-14"><i class="fa-solid fa-circle-dot"> </i></div>Подробнее
+                        <? 
+                        if($btn){ ?>
+                         <a href="<? the_permalink(); ?>" class="advantages__btn"> 
+                          <div class="icon-wrapper-14"><i class="fa-solid <? 
+                          if($btn_icon){
+                            echo $btn_icon['class']; 
+                          }
+                          ?> "></i> <? echo $btn; ?></div>
                         </a>
-                        <div class="advantages__data">
+                       <? }  ?>
+                        <? if($dateon){ ?>
+                          <div class="advantages__data">
                           <time><? echo get_the_date(); ?></time>
                         </div>
+                      <?  } ?>    
                       </div>
+                      <? } ?>
                     </div>
                   </div>
                 </div>

@@ -20,7 +20,10 @@ function crb_blocks() {
 		Field::make('text', 'tab_title', 'Заголовок вкладки')->set_width(40),
 		Field::make('icon', 'tab_icon', 'Иконка')->set_width(60),
 		))
-      ));
+      ))
+      ->add_tab('ID блока', array(
+        Field::make( "text", "block_id", "Уникальное название блока для навигации по якорным ссылкам" ),
+        ));
     Container::make('post_meta', 'Настройки категории')
     ->show_on_post_type('page')
     ->add_tab('Блоки на странице', array(
@@ -35,5 +38,6 @@ function crb_blocks() {
 }
 
 require_once get_template_directory() . '/inc/custom-fields/blocks/adv.php';
-require_once get_template_directory() . '/inc/custom-fields/blocks/slider.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/counter.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/about.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/feedback.php';
