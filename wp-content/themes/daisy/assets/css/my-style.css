@@ -15,21 +15,21 @@ button a{
     --img_order: 1;
   }
     .left-image .advantages__img{
-      border-bottom-left-radius: 30px;
+      border-bottom-left-radius: var(--item_radius);
       border-top-right-radius: 0;
     }
     .left-image .advantages__content{
       border-bottom-left-radius: 0;
-      border-top-right-radius: 30px;
+      border-top-right-radius: var(--item_radius);
     }
     .right-image .advantages__img{
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
+      border-top-right-radius: var(--item_radius);
+      border-bottom-right-radius: var(--item_radius);
       border-top-left-radius: 0;
     }
     .right-image .advantages__content{
-      border-top-left-radius: 30px;
-      border-bottom-left-radius: 30px;
+      border-top-left-radius: var(--item_radius);
+      border-bottom-left-radius: var(--item_radius);
       border-bottom-right-radius: 0;
     }
   .about_content_slide_image{
@@ -71,4 +71,20 @@ button a{
   -webkit-transform: scale(1);
   -ms-transform: scale(1);
   transform: scale(1);
+}
+.products__left_image .products__card{
+  display: flex;
+}
+.products__left_image .products__img {
+  max-height: none;
+  border-bottom-left-radius: var(--item_radius);
+  border-top-right-radius: 0;
+  overflow: hidden;
+  width: 50%;
+}
+
+.products__left_image .products__content {
+  border-bottom-left-radius: 0;
+  border-top-right-radius: var(--item_radius);
+  width: 50%;
 }

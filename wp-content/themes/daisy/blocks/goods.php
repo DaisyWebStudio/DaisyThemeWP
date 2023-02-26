@@ -6,8 +6,13 @@
 
  $img_order = carbon_get_the_post_meta( 'goods_side_image');
  $count = carbon_get_the_post_meta( 'goods_slide_count');
+ $side = carbon_get_the_post_meta( 'goods_side_image');
 ?>
-    <section class="products">
+    <section class="products
+    <? if($side == 'left'){
+     echo 'products__left_image';
+    } ?>
+    ">
       <div class="products__container">
         <div class="products__wrapper">
           <!-- header-block -- start -->
