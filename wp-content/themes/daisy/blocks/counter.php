@@ -8,8 +8,7 @@
 // $date = carbon_get_the_post_meta( 'counter_date_time');
 // print_r($date);
 ?>
-<? $data =  carbon_get_the_post_meta( 'counter_tabs');
-?>
+<? $data =  carbon_get_the_post_meta( 'counter_tabs');?>
   <section class="counter"> 
       <div class="counter__container"> 
         <div class="counter__wrapper">
@@ -35,11 +34,11 @@
                       <h3 class="item-title"><? echo $slide['counter_title']; ?></h3>
                     </div>
                     <div data-date="<? echo $slide['counter_date_time']; ?>" class="counter__timer timer-count timer-count-2">
-                      <div class="timer-count__item"><span id="count-days-2"></span></div><img src="<?php echo bloginfo('template_url');?>/assets/img/sep.svg" alt="pus">
-                      <div class="timer-count__item"><span id="count-hours-2"></span></div><img src="<?php echo bloginfo('template_url');?>/assets/img/sep.svg" alt="pus">
-                      <div class="timer-count__item"><span id="count-minutes-2"></span></div><img src="<?php echo bloginfo('template_url');?>/assets/img/sep.svg" alt="pus">
-                      <div class="timer-count__item"><span id="count-second-2"></span></div>
-                    </div>
+                      <div class="timer-count__item"><span class="timer-count__value" id="count-days-2"></span><span class="timer-count__caption">дней</span></div><img src="<?php echo bloginfo('template_url');?>/assets/img/sep.svg" alt="pus">
+                      <div class="timer-count__item"><span class="timer-count__value" id="count-hours-2"></span><span class="timer-count__caption">часов</span></div><img src="<?php echo bloginfo('template_url');?>/assets/img/sep.svg" alt="pus">
+                      <div class="timer-count__item"><span class="timer-count__value" id="count-minutes-2"></span><span class="timer-count__caption">минут</span></div><img src="<?php echo bloginfo('template_url');?>/assets/img/sep.svg" alt="pus">
+                      <div class="timer-count__item"><span class="timer-count__value" id="count-second-2"></span><span class="timer-count__caption">секунд</span></div>
+                      </div>
                     <? if($slide['counter_btn_label'] || $slide['counter_btn_icon']){ ?>
                       <a href="<? echo $slide['counter_btn_link']; ?>" class="counter__btn button">
                       <div class="icon-wrapper-14"><i class="fa-solid <? echo $slide['counter_btn_icon']['class']; ?>"></i></div><? echo $slide['counter_btn_label']; ?>

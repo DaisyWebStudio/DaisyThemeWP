@@ -18,7 +18,9 @@ function crb_counter() {
 		Field::make('icon', 'counter_btn_icon', 'Иконка на кнопке'),
         Field::make('text', 'counter_btn_label', 'Надпись на кнопке')->set_width(40),
         Field::make('text', 'counter_btn_link', 'Ссылка на кнопке')->set_width(60),
-		))
+		))->set_layout('tabbed-vertical')->set_header_template(' <% if (counter_title) { %><%- counter_title %><% } else { %> Слайд <% } %>')
         ))
+        ->set_layout('tabbed-horizontal')
+        ->set_header_template(' Вкладка ')
     ));
 }

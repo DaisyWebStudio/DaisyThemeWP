@@ -30,10 +30,12 @@ function crb_adv() {
         ->set_types(array(
           array(
             'type' => 'term',
-			'post_type' => 'cards_tax',
+			'taxonomy' => 'cards_tax',
           ),
         ))
 		))
+		->set_layout('tabbed-horizontal')
+        ->set_header_template(' Вкладка '),
     ))
 	->add_tab('Настройки кнопки', array(
 		Field::make( "separator", "card_btn", "Настройки кнопки" ),

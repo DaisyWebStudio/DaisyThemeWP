@@ -63,9 +63,18 @@
                       <div class="about-us__social">
                        <?  $social =  $slide['about_social_tooltip'];
                        if ( ! empty( $social ) ){ ?>
-                        <div class="about-us__social__group">
+                        <div class="about-us__social__group tooltype">
                         <?php foreach ( $social as $soc ): ?>
-                            <a href="<? echo $soc['about_social_link']; ?>"><i class="about-us__social__icon fa-solid <? echo $soc['about_social_icon']['class']; ?>"></i></a>
+                         
+                          <? if($soc['_type'] == 'about_social') {?>
+                            <a href="<? echo $soc['about_social_link']; ?>" class="tooltype__item"><i class="about-us__social__icon fa-solid <? echo $soc['about_social_icon']['class']; ?>"></i></a>
+                            <? } ?>
+                            <? if($soc['_type'] == 'about_tooltip') { ?>
+                              <div class="tooltype__item"> 
+                              <div class="icon-wrapper-16"><i class="about-us__social__icon fa-solid <? echo $soc['about_tooltip_icon']['class']; ?>"></i></div>
+                              <div class="tooltype__content tooltype__left"><? echo $soc['about_tooltip_text']; ?></div>
+                              </div>
+                            <? } ?>
                         <?php endforeach; ?>
                             <!-- <i class="fa-brands fa-telegram about-us__social__icon"></i><i class="fa-brands fa-vk about-us__social__icon"></i><i class="fa-brands fa-square-facebook about-us__social__icon"></i><i class="fa-brands fa-square-youtube about-us__social__icon"></i><i class="fa-brands fa-square-instagram about-us__social__icon"></i><i class="fa-brands fa-square-whatsapp about-us__social__icon"></i> -->
                     </div>

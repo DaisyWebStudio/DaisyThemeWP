@@ -1,43 +1,36 @@
-try{
-const section = document.querySelectorAll('section');
-section.forEach((i) => {
-  const tabsBtn = i.querySelectorAll('.tabs__btn');
-const tabsMenuBtn = i.querySelectorAll('.tabs-menu__btn');
-const tabsPanel = i.querySelectorAll('.tabs__panel');
-const tabsList = i.querySelectorAll('.tabs__list');
+// const tabsBtn = document.querySelectorAll('.tabs__btn')
+// const tabsMenuBtn = document.querySelectorAll('.tabs-menu__btn')
+// const tabsPanel = document.querySelectorAll('.tabs__panel')
+// const tabsList = document.querySelectorAll('.tabs__list')
 
-tabsList.forEach(el => {
-  let children = el.children
-  children[0].classList.add('tabs__btn--active')
-})
-  i.querySelector('.tabs__panel').classList.add('tabs__panel--active');
+// tabsList.forEach(el => {
+//   let children = el.children
+//   children[0].classList.add('tabs__btn--active')
+// })
 
+// for (let i = 0; i < tabsBtn.length; i++) {
 
-for (let i = 0; i < tabsBtn.length; i++) {
+//   tabsBtn[i].addEventListener('click', e => {
 
-  tabsBtn[i].addEventListener('click', e => {
+//     let tabsCurrent = e.target.parentElement.children
 
-    let tabsCurrent = e.target.parentElement.children
+//     for (let t = 0; t < tabsCurrent.length; t++) {
+//       tabsCurrent[t].classList.remove('tabs__btn--active')
+//     }
 
-    for (let t = 0; t < tabsCurrent.length; t++) {
-      tabsCurrent[t].classList.remove('tabs__btn--active')
-    }
-
-    e.target.classList.add('tabs__btn--active')
+//     e.target.classList.add('tabs__btn--active')
 
 
-    let panelCurrent = e.target.closest('.tabs').nextElementSibling.children
-    for (let p = 0; p < panelCurrent.length; p++) {
-      panelCurrent[p].classList.remove('tabs__panel--active')
-    }
+//     let panelCurrent = e.target.closest('.tabs').nextElementSibling.children
+//     for (let p = 0; p < panelCurrent.length; p++) {
+//       panelCurrent[p].classList.remove('tabs__panel--active')
+//     }
 
-    tabsPanel[i].classList.add('tabs__panel--active')
+//     tabsPanel[i].classList.add('tabs__panel--active')
 
-  })
+//   })
 
-}
-})
-
+// }
 
 
 
@@ -74,14 +67,6 @@ mediaTabs.forEach(el => {
   })
 })
 
-
-
-
-
-
-
-
-
 const formTabs = document.querySelector('.popup-form__tabs')
 const formTabsBtn = document.querySelectorAll('.popup-form__tabs-btn')
 
@@ -108,4 +93,42 @@ formTabsBtn.forEach(tab => {
     document.querySelector(`[data-blockpopup="${path}"]`).classList.add('popup-form__tab-block--active')
   })
 })
-} catch {}
+
+// tabs information -- start
+const informationNavWrapperArrow = document.querySelector('.information__nav-wrapper');
+const informationTabs = document.querySelectorAll('.information__tab');
+const informationItems = document.querySelectorAll('.information__item');
+
+informationTabs.forEach((btn, index) => {
+  btn.classList.add('hidden');
+  if (index == 0) {
+    btn.classList.remove('hidden');
+    btn.closest('.information__item').classList.add('information__item_active');
+  }
+
+  btn.addEventListener('click', (e) => {
+    let target = e.target;
+    let parent = target.closest('.information__item');
+    informationTabs.forEach(el => {
+      el.classList.remove('hidden');
+      informationNavWrapperArrow.classList.add('open');
+      parent.classList.add('information__item_active');
+    })
+
+    if (!target.classList.contains('information__tab_active')) {
+      informationTabs.forEach((elem, i) => {
+        elem.classList.add('hidden');
+      })
+      informationItems.forEach((el) => {
+        el.classList.remove('information__item_active');
+      })
+      informationNavWrapperArrow.classList.remove('open');
+
+    }
+    btn.classList.remove('hidden');
+    parent.classList.add('information__item_active');
+    console.log(parent);
+
+  })
+})
+// tabs information -- end

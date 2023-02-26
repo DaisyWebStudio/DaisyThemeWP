@@ -16,12 +16,12 @@ function crb_about() {
         Field::make("textarea", "about_descr", "Описание"),
         Field::make( 'complex', 'about_social_tooltip', 'Иконки-ссылки' )
         ->add_fields('about_social', 'Соц. сеть', array(
-            Field::make("icon", "about_social_icon", "Иконка"),
-            Field::make("text", "about_social_link", "Ссылка"),
+            Field::make("icon", "about_social_icon", "Иконка")->set_width(80),
+            Field::make("text", "about_social_link", "Ссылка")->set_width(20),
         ))
         ->add_fields('about_tooltip', 'Тултип', array(
-            Field::make("icon", "about_tooltip_icon", "Иконка"),
-            Field::make("text", "about_tooltip_text", "Тултип"),
+            Field::make("icon", "about_tooltip_icon", "Иконка")->set_width(80),
+            Field::make("text", "about_tooltip_text", "Подсказка")->set_width(20),
         ))->set_layout('tabbed-horizontal'),
         Field::make("separator", "about_sep_btn", "Кнопка"),
         Field::make("text", "about_btn_label", "Надпись на кнопке")->set_width(40),

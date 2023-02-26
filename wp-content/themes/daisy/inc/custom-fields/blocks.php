@@ -17,9 +17,10 @@ function crb_blocks() {
     ->add_tab('Вкладки', array(
       Field::make( 'complex', 'tabs', 'Вкладки' )
 		->add_fields( array(
-		Field::make('text', 'tab_title', 'Заголовок вкладки')->set_width(40),
-		Field::make('icon', 'tab_icon', 'Иконка')->set_width(60),
-		))
+		Field::make('text', 'tab_title', 'Заголовок вкладки')->set_width(30),
+		Field::make('icon', 'tab_icon', 'Иконка')->set_width(70),
+		))->set_layout('tabbed-horizontal')
+    ->set_header_template('  <% if (tab_title) { %><%- tab_title %><% } else { %> Вкладки <% } %> ')
       ))
       ->add_tab('ID блока', array(
         Field::make( "text", "block_id", "Уникальное название блока для навигации по якорным ссылкам" ),
@@ -41,3 +42,8 @@ require_once get_template_directory() . '/inc/custom-fields/blocks/adv.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/counter.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/about.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/feedback.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/goods.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/numbers.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/gallery.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/banner.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/information.php';

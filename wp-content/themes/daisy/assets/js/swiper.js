@@ -1,20 +1,20 @@
 // swiperSlider start
 try {
-  var swiper = new Swiper(".bannerSwiper", {
+  const bannerSwiper = new Swiper(".bannerSwiper", {
+    spaceBetween: 30,
     pagination: {
       el: ".swiper-pagination",
       clickable: true,
     },
-    autoplay: false,
+    navigation: {
+      nextEl: '.banner-navigation-next',
+      prevEl: '.banner-navigation-prev',
+    },
+    // autoplay: true,
     // loop: true,
   });
-} catch {
+} catch { }
 
-}
-// swiperSlider end
-// document.querySelectorAll('.advantages-swiper').forEach((i) => {
-  
-// })
 try {
   const aboutUsSwiper = new Swiper(".about-us-Swiper", {
     spaceBetween: 30,
@@ -84,300 +84,417 @@ try {
   });
 } catch { }
 
-// Function that actually builds the swiper 
-try{
-const buildSwiperSlider = sliderElm => {
-    const sliderIdentifier = sliderElm.dataset.show;
-    return new Swiper(`#${sliderElm.id}`, {
-     
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
 
-  pagination: {
-    el: '.advantages-pagination',
-    clickable: true,
-  },
 
-  navigation: {
-    nextEl: '.advantages-navigation-next',
-    prevEl: '.advantages-navigation-prev',
-  },
+try {
 
-  breakpoints: {
-    // when window width is >= 320px
-    564: {
-      slidesPerView: 1,
-      spaceBetween: 20
+  const advantagesSwiper = new Swiper('.advantages-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+
+    pagination: {
+      el: '.advantages-pagination',
+      clickable: true,
     },
-    762: {
-      slidesPerView: 2,
-      spaceBetween: 20
+
+    navigation: {
+      nextEl: '.advantages-navigation-next',
+      prevEl: '.advantages-navigation-prev',
     },
-    // when window width is >= 480px
-    992: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    1024: {
-      slidesPerView: sliderIdentifier,
-      spaceBetween: 30
+
+    breakpoints: {
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      }
     }
-  }
-    });
-}
 
-const allSliders = document.querySelectorAll('.advantages-swiper');
+  });
 
-allSliders.forEach(slider => buildSwiperSlider(slider));
+} catch { }
+
+
+
+try {
+
+  const gallerySwiper = new Swiper('.gallery-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+
+    pagination: {
+      el: '.gallery-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: '.gallery-navigation-next',
+      prevEl: '.gallery-navigation-prev',
+    },
+
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+    }
+
+  });
+
+} catch { }
+
+
+
+try {
+
+  const counterSwiper = new Swiper('.counter-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+
+    pagination: {
+      el: '.counter-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: '.counter-navigation-next',
+      prevEl: '.counter-navigation-prev',
+    },
+
+    breakpoints: {
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      992: {
+        slidesPerView: 1,
+        spaceBetween: 30
+      },
+    }
+
+  });
+
+} catch { }
+
+
+
+try {
+
+  const reviewsSwiper = new Swiper('.reviews-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+
+    pagination: {
+      el: '.reviews-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: '.reviews-navigation-next',
+      prevEl: '.reviews-navigation-prev',
+    },
+
+    breakpoints: {
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      992: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+    }
+
+  });
+
+} catch { }
+
+
+
+try {
+
+  const informationSwiper = new Swiper('.information-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 30,
+    allowTouchMove: false,
+    noSwiping: true,
+
+    pagination: {
+      el: '.information-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: '.information-navigation-next',
+      prevEl: '.information-navigation-prev',
+    },
+
+  });
+
+  const informationContentSwiper = new Swiper('.information-content-swiper', {
+
+    slidesPerView: 1,
+    loop: true,
+    direction: 'vertical',
+
+    pagination: {
+      el: '.information-content-pagination',
+      clickable: true,
+    },
+
+  });
+
+} catch { }
+
+
+
+try {
+
+  const menuSwiper = new Swiper('.menu-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+
+    pagination: {
+      el: '.menu-pagination',
+      clickable: true,
+    },
+
+    navigation: {
+      nextEl: '.menu-navigation-next',
+      prevEl: '.menu-navigation-prev',
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30
+      },
+    }
+
+  });
+
+} catch { }
+
+
+
+try {
+
+  const feedbackSwiper = new Swiper('.feedback-swiper', {
+
+    slidesPerView: 1,
+    allowTouchMove: false,
+    noSwiping: false,
+    loop: true,
+  
+    pagination: {
+      el: '.feedback-pagination',
+      clickable: true,
+    },
+  
+    navigation: {
+      nextEl: '.feedback-navigation-next',
+      prevEl: '.feedback-navigation-prev',
+    },
+  
+  });
+  const feedbackContentSwiper = new Swiper('.feedback-content-swiper', {
+  
+    slidesPerView: 1,
+    loop: true,
+    // direction: 'vertical',
+  
+    pagination: {
+      el: '.feedback-content-pagination',
+      clickable: true,
+    },
+  
+  });
+
 } catch {}
 
-// const advantagesSwiper = new Swiper('.advantages-swiper', {
 
-//   slidesPerView: 1,
-//   spaceBetween: 30,
-//   loop: true,
 
-//   pagination: {
-//     el: '.advantages-pagination',
-//     clickable: true,
-//   },
+try {
 
-//   navigation: {
-//     nextEl: '.advantages-navigation-next',
-//     prevEl: '.advantages-navigation-prev',
-//   },
+  const numbersSwiper = new Swiper('.numbers-swiper', {
 
-//   breakpoints: {
-//     // when window width is >= 320px
-//     564: {
-//       slidesPerView: 1,
-//       spaceBetween: 20
-//     },
-//     762: {
-//       slidesPerView: 2,
-//       spaceBetween: 20
-//     },
-//     // when window width is >= 480px
-//     992: {
-//       slidesPerView: 2,
-//       spaceBetween: 30
-//     },
-//     // when window width is >= 640px
-//     1024: {
-//       slidesPerView: 2,
-//       spaceBetween: 30
-//     }
-//   }
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+  
+    pagination: {
+      el: '.numbers-pagination',
+      clickable: true,
+    },
+  
+    navigation: {
+      nextEl: '.numbers-navigation-next',
+      prevEl: '.numbers-navigation-prev',
+    },
 
-// });
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+    }
+  
+  });
+
+} catch {}
 
 
 
-const gallerySwiper = new Swiper('.gallery-swiper', {
+try {
+
+  const productsSwiper = new Swiper('.products-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+  
+    pagination: {
+      el: '.products-pagination',
+      clickable: true,
+    },
+  
+    navigation: {
+      nextEl: '.products-navigation-next',
+      prevEl: '.products-navigation-prev',
+    },
+
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 30
+      },
+    }
+  
+  });
+
+} catch {}
+
+
+
+try {
+
+  const contactsSwiper = new Swiper('.contacts-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 30,
+    allowTouchMove: false,
+    noSwiping: false,
+    loop: true,
+  
+    pagination: {
+      el: '.contacts-pagination',
+      clickable: true,
+    },
+  
+    navigation: {
+      nextEl: '.contacts-navigation-next',
+      prevEl: '.contacts-navigation-prev',
+    },
+  
+  });
+
+} catch {}
+
+
+
+try {
+
+  const faqSwiper = new Swiper('.faq-swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+  
+    pagination: {
+      el: '.faq-pagination',
+      clickable: true,
+    },
+  
+    navigation: {
+      nextEl: '.faq-navigation-next',
+      prevEl: '.faq-navigation-prev',
+    },
+  
+  });
+
+} catch {}
+
+
+
+const popupSwiper = new Swiper('.popup-swiper', {
 
   slidesPerView: 1,
   spaceBetween: 30,
+  direction: 'vertical',
   loop: true,
 
   pagination: {
-    el: '.gallery-pagination',
+    el: '.popup-pagination',
     clickable: true,
   },
-
-  navigation: {
-    nextEl: '.gallery-navigation-next',
-    prevEl: '.gallery-navigation-prev',
-  },
-
-  breakpoints: {
-    // when window width is >= 320px
-    564: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    762: {
-      slidesPerView: 2,
-      spaceBetween: 20
-    },
-    // when window width is >= 480px
-    992: {
-      slidesPerView: 2,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    }
-  }
 
 });
 
 
 
-const counterSwiper = new Swiper('.counter-swiper', {
+const productBarSwiper = new Swiper('.product-bar-swiper', {
 
   slidesPerView: 1,
   spaceBetween: 30,
-  loop: false,
-
-  pagination: {
-    el: '.counter-pagination',
-    clickable: true,
-  },
-
-  navigation: {
-    nextEl: '.counter-navigation-next',
-    prevEl: '.counter-navigation-prev',
-  },
-
-  breakpoints: {
-    // when window width is >= 320px
-    564: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    762: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    // when window width is >= 480px
-    992: {
-      slidesPerView: 1,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    1024: {
-      slidesPerView: 1,
-      spaceBetween: 30
-    }
-  }
-
-});
-
-
-const reviewsSwiper = new Swiper('.reviews-swiper', {
-
-  slidesPerView: 3,
-  spaceBetween: 30,
+  direction: 'vertical',
   loop: true,
 
   pagination: {
-    el: '.reviews-pagination',
+    el: '.product-bar-pagination',
     clickable: true,
   },
-
-  navigation: {
-    nextEl: '.reviews-navigation-next',
-    prevEl: '.reviews-navigation-prev',
-  },
-
-  breakpoints: {
-    // when window width is >= 320px
-    564: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    762: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    // when window width is >= 480px
-    992: {
-      slidesPerView: 1,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    }
-  }
-
-});
-
-
-
-const informationSwiper = new Swiper('.information-swiper', {
-
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-
-  pagination: {
-    el: '.information-pagination',
-    clickable: true,
-  },
-
-  navigation: {
-    nextEl: '.information-navigation-next',
-    prevEl: '.information-navigation-prev',
-  },
-
-  breakpoints: {
-    // when window width is >= 320px
-    564: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    762: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    // when window width is >= 480px
-    992: {
-      slidesPerView: 1,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    1024: {
-      slidesPerView: 1,
-      spaceBetween: 30
-    }
-  }
-
-});
-
-
-
-const informationContentSwiper = new Swiper('.information-content-swiper', {
-
-  slidesPerView: 1,
-  spaceBetween: 30,
-  loop: true,
-
-  pagination: {
-    el: '.reviews-pagination',
-    clickable: true,
-  },
-
-  navigation: {
-    nextEl: '.reviews-navigation-next',
-    prevEl: '.reviews-navigation-prev',
-  },
-
-  breakpoints: {
-    // when window width is >= 320px
-    564: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    762: {
-      slidesPerView: 1,
-      spaceBetween: 20
-    },
-    // when window width is >= 480px
-    992: {
-      slidesPerView: 1,
-      spaceBetween: 30
-    },
-    // when window width is >= 640px
-    1024: {
-      slidesPerView: 1,
-      spaceBetween: 30
-    }
-  }
 
 });

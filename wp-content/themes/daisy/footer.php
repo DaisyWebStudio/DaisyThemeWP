@@ -68,5 +68,6 @@
                 </div>
             </footer>
 <?php wp_footer(); ?>
+ <!-- fancybox--><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js?_v=20230216185501"></script>
 		</body>
 </html>

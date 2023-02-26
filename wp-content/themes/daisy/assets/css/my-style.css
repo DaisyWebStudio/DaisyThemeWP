@@ -1,6 +1,37 @@
 button a{
     color: #fff;
   }
+  .about-us__social__group{
+    display: flex;
+    align-items: center;
+  }
+  .about-us__social__group  .tooltype__item{
+   margin-left: 10px;
+  }
+  .left-image .advantages__img{
+    --img_order: 0;
+  }
+  .right-image .advantages__img{
+    --img_order: 1;
+  }
+    .left-image .advantages__img{
+      border-bottom-left-radius: 30px;
+      border-top-right-radius: 0;
+    }
+    .left-image .advantages__content{
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 30px;
+    }
+    .right-image .advantages__img{
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      border-top-left-radius: 0;
+    }
+    .right-image .advantages__content{
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 0;
+    }
   .about_content_slide_image{
     width: 100%;
     height: 100%;
@@ -29,4 +60,15 @@ button a{
 .about-us__block_30{
   -ms-grid-columns: calc(30% - 15px) auto;
   grid-template-columns: calc(30% - 15px) auto;
+}
+.information__item_active .information__tab span{
+  color: var(--button_hover_nobg_color);
+}
+.information__item_active .information__tab .icon-wrapper-14 {
+  color: var(--icon_color-primary);
+}
+.information__item_active .information__hover-item {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }

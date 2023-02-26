@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css?_v=20230120215128">
     <!-- scrollbar--><link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css?_v=20230120215128"/>
     <!-- swiper--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css?_v=20230120215128"/>
+    <!-- galery--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css?_v=20230216185501"/>
     <?php
              wp_head();
          ?>
