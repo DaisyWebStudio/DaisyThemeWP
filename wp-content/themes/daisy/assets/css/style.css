@@ -97,7 +97,7 @@
   --button_font-weight: 600;
   /* -- mobile -- */
   /* m-h1 */
-  --h1: 46px;
+  --m-h1: 46px; /* corrected mistake. before: --h1, after: --m-h1 */
   --m-w-h1: 500;
   /* m-h2 */
   --m-h2: 24px;

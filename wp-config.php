@@ -20,7 +20,7 @@
 
 // ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define( 'DB_NAME', 'daisy_db' );
+define( 'DB_NAME', 'daisydb' );
 
 /** Имя пользователя MySQL */
 define( 'DB_USER', 'daisy-a' );
