@@ -40,10 +40,11 @@ function crb_blocks() {
 
 require_once get_template_directory() . '/inc/custom-fields/blocks/adv.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/counter.php';
-require_once get_template_directory() . '/inc/custom-fields/blocks/about.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/feedback.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/goods.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/numbers.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/gallery.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/banner.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks/information.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/contacts.php';
+require_once get_template_directory() . '/inc/custom-fields/blocks/reviews.php';

@@ -43,6 +43,12 @@
           if($m[0] == 'blocks/information.php'){
             get_template_part('blocks/information');
           }
+          if($m[0] == 'blocks/contacts.php'){
+            get_template_part('blocks/contacts');
+          }
+          if($m[0] == 'blocks/reviews.php'){
+            get_template_part('blocks/reviews');
+          }
         // get_template_part('slider');
         // echo carbon_get_the_post_meta('art_short_descr');
     }

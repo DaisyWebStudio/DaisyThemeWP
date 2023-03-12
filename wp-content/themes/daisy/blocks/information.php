@@ -23,8 +23,21 @@
               <div class="swiper-wrapper information__swiper">
                 <? $slides = $item['information_tab_sliders']; ?>
                 <?php foreach ( $slides as $slide ):?>
+                 <? $content_proportions =  $slide['information_proportions']; ?>
                 <div class="swiper-slide">
-                  <div class="information__block">
+                  <div class="information__block
+                  <? 
+                  if($content_proportions == '70%'){
+                    echo 'information__block_70';
+                  }
+                  if($content_proportions == '50%'){
+                    echo 'information__block_50';
+                  }
+                  if($content_proportions == '30%'){
+                    echo 'information__block_30';
+                  }
+                  ?>
+                  ">
                     <div class="information__scroll-wrapper information__nav-wrapper">
                       <div class="information__nav">
                         <ul class="information__list">

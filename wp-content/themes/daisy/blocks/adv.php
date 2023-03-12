@@ -1,13 +1,13 @@
 <?
  /**
- * Template name: Преимущества
+ * Template name: Преимущества / Команда / Статьи
  * Template Post Type: blocks
  */
 
 // $data = carbon_get_the_post_meta( 'card_ass'); 
 // print_r($data);
 $img_order = carbon_get_the_post_meta( 'adv_side_image');
-$count = carbon_get_the_post_meta( 'adv_side_count');
+$count = carbon_get_the_post_meta( 'adv_slide_count');
 $btn = carbon_get_the_post_meta( 'card_btn_label');
 $btn_icon = carbon_get_the_post_meta( 'card_btn_icon');
 $dateon = carbon_get_the_post_meta( 'card_date');

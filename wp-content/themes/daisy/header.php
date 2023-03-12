@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="">
-	<title>Главная</title>
+	<title><? the_title(); ?></title>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.png">
@@ -21,6 +21,7 @@
          ?>
 </head>
 <body class="f" data-simplebar>
+<? get_template_part('template-parts/header/ui_kit');?>
     <?php
             // get_template_part('template-parts/style');
 
@@ -36,4 +37,20 @@
             // get_template_part('template-parts/header-nav');
     ?>
     
-            
+    <header class="header" id="top">
+      <div class="header__container container-settings">
+        <div class="header__wrapper">
+          <!-- top-news -- start -->
+          <? if(carbon_get_theme_option( 'header_news_text') || carbon_get_theme_option( 'header_news_date') || carbon_get_theme_option( 'header_news_btn_label') || carbon_get_theme_option( 'header_news_btn_icon')): ?>
+          <?  get_template_part('template-parts/header/news_action'); ?>
+         <?php endif; ?>
+          <!-- top-news -- end -->
+          <!-- top-info -- start -->
+          <?  get_template_part('template-parts/header/header_info'); ?>
+          <!-- top-info -- end -->
+          <!-- top-nav -- start-->
+          <?  get_template_part('template-parts/header/main_header'); ?>
+          <!-- top-nav -- end -->
+        </div>
+      </div>
+    </header>

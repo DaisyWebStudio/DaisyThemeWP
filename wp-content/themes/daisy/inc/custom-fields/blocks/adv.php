@@ -15,7 +15,7 @@ function crb_adv() {
 					  'left' => 'Слева',
 					  'right'  => 'Справа',
 				  ) )->set_width(50),
-				  Field::make( "radio", "adv_side_count", "Кол-во слайдев" )
+				  Field::make( "radio", "adv_slide_count", "Кол-во слайдев" )
 				  ->add_options( array(
                       '4' => '4',
                       '3' => '3',

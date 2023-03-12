@@ -81,6 +81,35 @@ try{
         })
         } catch {}
 
+        try {
+          function countsBlock() {
+            const timer = document.querySelector('.top-news');
+            let taimerWrap = timer.querySelector('.timer-count');
+            let date = taimerWrap.dataset.date;
+            let dateCount = new Date(date);
+            let nowDate = new Date();
+            let gap = dateCount - nowDate;
+          
+            let days = Math.floor(gap / 1000 / 60 / 60 / 24);
+            let hours = Math.floor(gap / 1000 / 60 / 60) % 24;
+            let minutes = Math.floor(gap / 1000 / 60) % 60;
+            let second = Math.floor(gap / 1000) % 60;
+
+            if (gap < 0) {
+              taimerWrap.innerText = ''
+            } else {
+              taimerWrap.querySelector('#count-days').innerText = days
+              taimerWrap.querySelector('#count-hours').innerText = hours
+              taimerWrap.querySelector('#count-minutes').innerText = minutes
+              taimerWrap.querySelector('#count-second').innerText = second
+            }
+          }
+          countsBlock();
+        
+          setInterval(countsBlock, 1000)
+          
+          } catch {}
+
         try{
           const section = document.querySelectorAll('section');
           section.forEach((i) => {

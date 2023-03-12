@@ -1,6 +1,6 @@
 <?
  /**
- * Template name: Товары/тарифы
+ * Template name: Товары / тарифы
  * Template Post Type: blocks
  */
 

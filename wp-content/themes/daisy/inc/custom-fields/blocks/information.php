@@ -11,6 +11,12 @@ function crb_information() {
 		->add_fields( array(
             Field::make( 'complex', 'information_tab_sliders', 'Слайды' )
 		->add_fields( array(
+            Field::make("radio", "information_proportions", "Размер основного контента")
+        ->add_options( array (
+            '70%' => '70%',
+            '50%' => '50%',
+            '30%' => '30%',
+        )),
             Field::make( 'complex', 'information_tab_inf', 'Вкладки с информацией' )
             ->add_fields( array(
                 Field::make('text', 'information_name', 'Название вкладки')->set_width(30),
