@@ -6219,4 +6219,187 @@
     </section>
     <!-- footer ---- end-->
 <?php
-        get_footer();
+        get_footer(); ?>
+
+        <!-- tab-item-->
+        <div class="swiper products-swiper tabs__panel">
+          <div class="swiper-wrapper products__swiper">
+            <div class="swiper-slide">
+              <div class="products__card"> 
+                <div class="products__img"> <img src="<?php echo bloginfo('template_url');?>/assets/img/products.png" alt="products"></div>
+                <div class="products__content"> 
+                  <div class="products__header"> 
+                    <h3 class="products__title item-title">Заголовок</h3>
+                    <button class="products__like">
+                      <div class="icon-wrapper-24"><i class="fa-solid fa-heart"></i></div>
+                    </button>
+                  </div>
+                  <div class="products__description"> <span>Описание</span>
+                    <div class="products__tooltype">
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__left">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__left">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__left">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__left">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__left">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__right">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__right">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__right">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__right">Подсказка</div>
+                        </div>
+                      </div>
+                      <div class="tooltype">
+                        <div class="tooltype__item"> 
+                          <div class="icon-wrapper-16"><i class="fa-solid fa-music"></i></div>
+                          <div class="tooltype__content tooltype__right">Подсказка</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="products__parameters-list">
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Размер:</span><span class="products__parameters-type">XS</span></li>
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Цвет:</span><span class="products__parameters-type">Gray</span></li>
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Мфтериал:</span><span class="products__parameters-type">Хлопок</span></li>
+                  </ul>
+                  <div class="products__price item-title">1000 р</div>
+                  <button class="products__button button">
+                    <div class="icon-wrapper-14"><i class="fa-solid fa-circle-dot"></i></div><span>Подробнее</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="products-navigation slider-navigation">
+            <div class="slider-navigation__body slider-navigation__body__horizontal">
+              <button class="slider-navigation-prew products-navigation-prev icon-wrapper-16"><i class="fa-solid fa-angle-left"></i></button>
+              <div class="pagination products-pagination"></div>
+              <button class="slider-navigation-next products-navigation-next icon-wrapper-16"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+        </div>
+        <!-- tab-item-->
+        <div class="swiper products-swiper tabs__panel">
+          <div class="swiper-wrapper products__swiper">
+            <div class="swiper-slide">
+              <div class="products__card"> 
+                <div class="products__img"> <img src="<?php echo bloginfo('template_url');?>/assets/img/products.png" alt="products"></div>
+                <div class="products__content"> 
+                  <div class="products__header"> 
+                    <h3 class="products__title item-title">Заголовок</h3>
+                    <button class="products__like">
+                      <div class="icon-wrapper-24"><i class="fa-solid fa-heart"></i></div>
+                    </button>
+                  </div>
+                  <div class="products__description">
+                     Описание</div>
+                  <ul class="products__parameters-list">
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Размер:</span><span class="products__parameters-type">XS</span></li>
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Цвет:</span><span class="products__parameters-type">Gray</span></li>
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Мфтериал:</span><span class="products__parameters-type">Хлопок</span></li>
+                  </ul>
+                  <div class="products__price item-title">1000 р</div>
+                  <button class="products__button button">
+                    <div class="icon-wrapper-14"><i class="fa-solid fa-circle-dot"></i></div><span>Подробнее</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="products__card"> 
+                <div class="products__img"> <img src="<?php echo bloginfo('template_url');?>/assets/img/products.png" alt="products"></div>
+                <div class="products__content"> 
+                  <div class="products__header"> 
+                    <h3 class="products__title item-title">Заголовок</h3>
+                    <button class="products__like">
+                      <div class="icon-wrapper-24"><i class="fa-solid fa-heart"></i></div>
+                    </button>
+                  </div>
+                  <div class="products__description">
+                     Описание</div>
+                  <ul class="products__parameters-list">
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Размер:</span><span class="products__parameters-type">XS</span></li>
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Цвет:</span><span class="products__parameters-type">Gray</span></li>
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Мфтериал:</span><span class="products__parameters-type">Хлопок</span></li>
+                  </ul>
+                  <div class="products__price item-title">1000 р</div>
+                  <button class="products__button button">
+                    <div class="icon-wrapper-14"><i class="fa-solid fa-circle-dot"></i></div><span>Подробнее</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="products__card"> 
+                <div class="products__img"> <img src="<?php echo bloginfo('template_url');?>/assets/img/products.png" alt="products"></div>
+                <div class="products__content"> 
+                  <div class="products__header"> 
+                    <h3 class="products__title item-title">Заголовок</h3>
+                    <button class="products__like">
+                      <div class="icon-wrapper-24"><i class="fa-solid fa-heart"></i></div>
+                    </button>
+                  </div>
+                  <div class="products__description">
+                     Описание</div>
+                  <ul class="products__parameters-list">
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Размер:</span><span class="products__parameters-type">XS</span></li>
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Цвет:</span><span class="products__parameters-type">Gray</span></li>
+                    <li class="products__parameters-item"> <span class="products__parameters-name">Мфтериал:</span><span class="products__parameters-type">Хлопок</span></li>
+                  </ul>
+                  <div class="products__price item-title">1000 р</div>
+                  <button class="products__button button">
+                    <div class="icon-wrapper-14"><i class="fa-solid fa-circle-dot"></i></div><span>Подробнее</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="products-navigation slider-navigation">
+            <div class="slider-navigation__body slider-navigation__body__horizontal">
+              <button class="slider-navigation-prew products-navigation-prev icon-wrapper-16"><i class="fa-solid fa-angle-left"></i></button>
+              <div class="pagination products-pagination"></div>
+              <button class="slider-navigation-next products-navigation-next icon-wrapper-16"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+          </div>
+        </div>

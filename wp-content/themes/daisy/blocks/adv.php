@@ -1,41 +1,19 @@
 <?
  /**
- * Template name: Преимущества
+ * Template name: Преимущества / Команда / Статьи
  * Template Post Type: blocks
  */
 
 // $data = carbon_get_the_post_meta( 'card_ass'); 
 // print_r($data);
 $img_order = carbon_get_the_post_meta( 'adv_side_image');
-$count = carbon_get_the_post_meta( 'adv_side_count');
+$count = carbon_get_the_post_meta( 'adv_slide_count');
+$btn = carbon_get_the_post_meta( 'card_btn_label');
+$btn_icon = carbon_get_the_post_meta( 'card_btn_icon');
+$dateon = carbon_get_the_post_meta( 'card_date');
 // print_r($img_order);
 ?>
-  <style>
-    .left-image .advantages__img{
-      --img_order: 0;
-    }
-    .right-image .advantages__img{
-      --img_order: 1;
-    }
-      .left-image .advantages__img{
-        border-bottom-left-radius: 30px;
-        border-top-right-radius: 0;
-      }
-      .left-image .advantages__content{
-        border-bottom-left-radius: 0;
-        border-top-right-radius: 30px;
-      }
-      .right-image .advantages__img{
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
-        border-top-left-radius: 0;
-      }
-      .right-image .advantages__content{
-        border-top-left-radius: 30px;
-        border-bottom-left-radius: 30px;
-        border-bottom-right-radius: 0;
-      }
-  </style>
+
 <section class="advantages <? 
 if($img_order == 'none'){ 
   echo 'advantages-img-none';
@@ -65,11 +43,7 @@ if($img_order == 'left' || $img_order == 'right'){
           <!-- body-block -- start-->
           <div class="advantages__body">
             <!-- tab-item-->
-            <? $data =  carbon_get_the_post_meta( 'adv_tabs'); 
-            ?>
-           <? 
-          //  print_r($data); 
-           ?>
+            <? $data =  carbon_get_the_post_meta( 'adv_tabs'); ?>
             <? if ( ! empty( $data ) ): ?>
               <?php foreach ( $data as $item ): ?>
                 <? 
@@ -89,17 +63,8 @@ if($img_order == 'left' || $img_order == 'right'){
                   ),
                 ) );
                 ?>
-           <div id="sl<? the_id(); ?>" data-show="<? echo $count; ?>" class="swiper advantages-swiper tabs__panel">
+           <div id="sl<? the_id(); ?>" data-show="<? echo $count; ?>" class="swiper much-swiper advantages-swiper tabs__panel">
               <div class="swiper-wrapper advantages__swiper">
-             <? 
-            //  $btn = false;
-             $btn = carbon_get_the_post_meta( 'card_btn_label');
-            $btn_icon = carbon_get_the_post_meta( 'card_btn_icon');
-            $dateon = carbon_get_the_post_meta( 'card_date');
-                // if($btn_label){
-                //   $btn = true;
-                // }
-                         ?>
             <?  if ( $_posts->have_posts() ) :
             while ( $_posts->have_posts() ) :
               $_posts->the_post() ?>
@@ -113,9 +78,7 @@ if($img_order == 'left' || $img_order == 'right'){
                   if($img_order == 'bg'){ ?>
                     background-image: url(<? echo get_the_post_thumbnail_url(); ?>);
                     background-size: cover;
-                  <?  }
-                  ?>
-                  ">
+                  <?  } ?> ">
                       <div class="advantages__content-body">
                         <div class="advantages__header"> 
                           <div class="advantages__title"> 

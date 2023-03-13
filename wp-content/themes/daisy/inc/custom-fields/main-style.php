@@ -5,7 +5,7 @@ use Carbon_Fields\Field;
 
 add_action( 'carbon_fields_register_fields', 'crb_main_style' );
 function crb_main_style() {
-    $basic_options_ui_container = Container::make('theme_options', 'Настройки UI KIT');
+    $basic_options_ui_container = Container::make('theme_options', 'Настройки UI KIT')->set_icon( 'dashicons-art' );
     $basic_options_ui_container
         ->add_tab('Отступы', array(
             Field::make( 'html', 'separation-vertical-spacing' )

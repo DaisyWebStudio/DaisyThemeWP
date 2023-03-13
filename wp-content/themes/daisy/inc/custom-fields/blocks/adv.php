@@ -15,7 +15,7 @@ function crb_adv() {
 					  'left' => 'Слева',
 					  'right'  => 'Справа',
 				  ) )->set_width(50),
-				  Field::make( "radio", "adv_side_count", "Кол-во слайдев" )
+				  Field::make( "radio", "adv_slide_count", "Кол-во слайдев" )
 				  ->add_options( array(
                       '4' => '4',
                       '3' => '3',
@@ -30,10 +30,12 @@ function crb_adv() {
         ->set_types(array(
           array(
             'type' => 'term',
-			'post_type' => 'cards_tax',
+			'taxonomy' => 'cards_tax',
           ),
         ))
 		))
+		->set_layout('tabbed-horizontal')
+        ->set_header_template(' Вкладка '),
     ))
 	->add_tab('Настройки кнопки', array(
 		Field::make( "separator", "card_btn", "Настройки кнопки" ),

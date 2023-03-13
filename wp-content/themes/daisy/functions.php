@@ -16,10 +16,12 @@ function daisy_scripts() {
 	wp_enqueue_script('daisy_swiper', get_template_directory_uri() . '/assets/js/swiper.js', array(), null, true);
 	wp_enqueue_script('daisy_fslightbox', get_template_directory_uri() . '/assets/js/fslightbox.js', array(), null, true);
 	wp_enqueue_script('daisy_app', get_template_directory_uri() . '/assets/jsapp.js', array(), null, true);
-	wp_enqueue_script('daisy_timer', get_template_directory_uri() . '/assets/js/timer.js', array(), null, true);
+	// wp_enqueue_script('daisy_timer', get_template_directory_uri() . '/assets/js/timer.js', array(), null, true);
 	wp_enqueue_script('daisy_popups', get_template_directory_uri() . '/assets/js/popups.js', array(), null, true);
 	// wp_enqueue_script('daisy_burger', get_template_directory_uri() . '/assets/js/burger.js', array(), null, true);
-	wp_enqueue_script('daisy_tabs', get_template_directory_uri() . '/assets/js/tabs.js', array(), null, true);
+	// wp_enqueue_script('daisy_tabs', get_template_directory_uri() . '/assets/js/tabs.js', array(), null, true);
+	// wp_enqueue_script('daisy_galery', get_template_directory_uri() . '/assets/js/galery.js', array(), null, true);
+	wp_enqueue_script('daisy_myscripts', get_template_directory_uri() . '/assets/js/my-scripts.js', array(), null, true);
 	// wp_enqueue_script('daisy_preloader', get_template_directory_uri() . '/assets/js/preloader.js', array(), null, true);
 	
 	// wp_enqueue_script('daisy_mCustomScrollbar', get_template_directory_uri() . '/assets/js/jquery.mCustomScrollbar.concat.min.js', array(), null, true);
@@ -71,13 +73,14 @@ register_nav_menus(
 	)
 );
 
-
 add_action( 'widgets_init', 'daisy_widgets_init' );
 require_once get_template_directory() . '/inc/widgets.php';
 require_once get_template_directory() . '/inc/custom-type.php';
 require_once get_template_directory() . '/inc/carbon-fields/index.php';
 require_once get_template_directory() . '/inc/custom-fields/main-style.php';
+require_once get_template_directory() . '/inc/custom-fields/header.php';
 require_once get_template_directory() . '/inc/custom-fields/blocks.php';
+require_once get_template_directory() . '/inc/custom-fields/footer.php';
 // require_once get_template_directory() . '/inc/custom-fields/pm.php';
 // require_once get_template_directory() . '/inc/custom-fields/page-fields.php';
 
@@ -138,3 +141,16 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     __FILE__, //Full path to the main plugin file or functions.php.
     'daisy'
 );
+
+add_filter( 'manage_blocks_posts_columns', 'smashing_filter_posts_columns' );
+function smashing_filter_posts_columns( $columns ) {   
+	$columns['template'] = __( 'Шаблон блока', 'smashing' );  
+	return $columns;
+}
+add_action( 'manage_blocks_posts_custom_column', 'smashing_blocks_column', 10, 2);
+function smashing_blocks_column( $column, $post_id ) {
+// Цена в месяц
+
+$template = get_post_meta( $post_id, '_wp_page_template', true );
+echo $template;
+}

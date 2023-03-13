@@ -1,3 +1,4 @@
+try {
 const bannerSwiper = document.querySelector('.bannerSwiper');
 const bannerVideo = document.querySelectorAll('.banner__video');
 const bannerIconImg = document.querySelectorAll('.banner__icon__img');
@@ -21,3 +22,4 @@ bannerSwiper.addEventListener('click', function (event) {
   //   video.pause();
   // } 
 });
+} catch {}
